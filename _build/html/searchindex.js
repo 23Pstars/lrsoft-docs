@@ -1,1 +1,1 @@
-Search.setIndex({docnames:["index"],envversion:50,filenames:["index.rst"],objects:{},objnames:{},objtypes:{},terms:{halaman:0,indek:0,modul:0,pencarian:0},titles:["Welcome to LRsoft Docs&#8217;s documentation!"],titleterms:{doc:0,document:0,indic:0,lrsoft:0,tabl:0,welcom:0}})
+Search.setIndex({docnames:["index"],envversion:50,filenames:["index.rst"],objects:{},objnames:{},objtypes:{},terms:{halaman:0,indek:0,modul:0,pencarian:0},titles:["Dokumentasi project LRsoft"],titleterms:{doc:[],document:[],dokumentasi:0,indic:0,lrsoft:0,project:0,tabl:0,welcom:[]}})
