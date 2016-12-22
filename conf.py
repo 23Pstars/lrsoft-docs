@@ -30,7 +30,7 @@
 # Add any Sphinx extension module names here, as strings. They can be
 # extensions coming with Sphinx (named 'sphinx.ext.*') or your custom
 # ones.
-extensions = []
+extensions = ["sphinxcontrib.phpdomain"]
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
@@ -152,5 +152,8 @@ texinfo_documents = [
      'Miscellaneous'),
 ]
 
-
-
+from sphinx.highlighting import lexers
+from pygments.lexers.web import PhpLexer
+lexers['php'] = PhpLexer(startinline=True, linenos=1)
+lexers['php-annotations'] = PhpLexer(startinline=True, linenos=1)
+# primary_domain = 'php'
