@@ -12,7 +12,7 @@ How to use
 Buat script php dengan nama tertentu (misalnya ``update.php``), tempatkan script tersebut di ``ROOT`` project web.
 Untuk deployment project `LRsoft`_, kami gunakan script ini untuk melakukan update ke semua project yang menggunakan ``LRS Engine``.
 
-Easy Setup
+Easy setup
 ==========
 
 .. code-block:: php
