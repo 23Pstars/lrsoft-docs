@@ -7,7 +7,7 @@ Halaman ini berisi dokumentasi dari project-project yang dikemabangkan oleh tim 
 .. _LRsoft: http://lrsoft.co.id
 
 .. toctree::
-   :maxdepth: 2
+   :maxdepth: 3
 
    lrs_engine
    git_source_updater
