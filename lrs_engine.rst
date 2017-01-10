@@ -83,7 +83,91 @@ Install semua struktur dan pre-installed database pada LRS Engine.
 
     define( 'LRS_INSTALLER_ENABLE', true );
 
-- defines
+Defines
+-------
+LRS Engine memerlukan beberapa variabel untuk menjaga konsistensi nilai maupun path.
+
+define.abs.path.php
+...................
+Berisi variabel path yang dapat diakses untuk keperluan akses file sistem.
+
+.. code-block:: php
+    :linenos:
+
+    /** absolute path untuk asset */
+    define( 'LRS_ABS_ASSET_PATH', LRS_ABS_PATH . DS . 'asset' );
+
+    /** absolute path untuk css */
+    define( 'LRS_ABS_CSS_PATH', LRS_ABS_PATH . DS . 'asset' . DS . 'css' );
+
+    /** absolute path untuk js */
+    define( 'LRS_ABS_JS_PATH', LRS_ABS_PATH . DS . 'asset' . DS . 'js' );
+
+    /** absolute path untuk js */
+    define( 'LRS_ABS_IMG_PATH', LRS_ABS_PATH . DS . 'asset' . DS . 'img' );
+
+    /** absolute path untuk content upload */
+    define( 'LRS_ABS_UPLOAD_PATH', LRS_ABS_PATH . DS . 'asset' . DS . 'upload');
+
+    /** absolute path untuk model */
+    define( 'LRS_ABS_MODEL_PATH', LRS_ABS_PATH . DS . 'model' );
+
+    /** absolute path untuk view */
+    define( 'LRS_ABS_VIEW_PATH', LRS_ABS_PATH . DS . 'view' );
+
+    /** absolute path untuk controller */
+    define( 'LRS_ABS_CONTROLLER_PATH', LRS_ABS_PATH . DS . 'controller' );
+
+    /** absolute path untuk module */
+    define( 'LRS_ABS_MODULE_PATH', LRS_ABS_PATH . DS . 'module' );
+
+    /** absolute path untuk skin */
+    define( 'LRS_ABS_SKIN_PATH', LRS_ABS_PATH . DS . 'skin' );
+
+    /** absolute path untuk version */
+    define( 'LRS_ABS_VERSION_PATH', LRS_ABS_PATH . DS . 'VERSION.md' );
+
+    /** absolute path untuk config */
+    define( 'LRS_ABS_CONFIG_PATH', LRS_ABS_PATH . DS . 'config.php' );
+
+define.uri.path.php
+...................
+Berisi variabel path yang dapat diakses untuk keperluan akses publik.
+
+.. code-block:: php
+    :linenos:
+
+    /** path untuk asset */
+    define( 'LRS_ASSET_PATH', LRS_URL_PATH . DS . 'asset' );
+
+    /** path untuk css */
+    define( 'LRS_CSS_PATH', LRS_URL_PATH . DS . 'asset' . DS . 'css' );
+
+    /** path untuk js */
+    define( 'LRS_JS_PATH', LRS_URL_PATH . DS . 'asset' . DS . 'js' );
+
+    /** path untuk img */
+    define( 'LRS_IMG_PATH', LRS_URL_PATH . DS . 'asset' . DS . 'img' );
+
+    /** path untuk content upload */
+    define( 'LRS_UPLOAD_PATH', LRS_URL_PATH . DS . 'asset' . DS . 'upload');
+
+    /** path untuk module */
+    define( 'LRS_MODULE_PATH', LRS_URL_PATH . DS . 'module' );
+
+    /** path untuk skin */
+    define( 'LRS_SKIN_PATH', LRS_URL_PATH . DS . 'skin' );
+
+define.version.php
+..................
+Berisi variabel path yang dapat diakses untuk keperluan akses publik.
+
+.. code-block:: php
+    :linenos:
+
+    /** versi dari LRS Engine */
+    define( 'LRS_ENGINE_VERSION', $current_version );
+
 - controller
 - model
 
