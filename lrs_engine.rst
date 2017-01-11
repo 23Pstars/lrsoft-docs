@@ -168,7 +168,10 @@ Berisi variabel path yang dapat diakses untuk keperluan akses publik.
     /** versi dari LRS Engine */
     define( 'LRS_ENGINE_VERSION', $current_version );
 
-- controller
+Controllers
+-----------
+Kelas-kelas yang berisi fungsi inti dari setiap bagian layanan.
+
 - model
 
 Modules
