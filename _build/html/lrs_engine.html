@@ -102,6 +102,12 @@
 <li class="toctree-l4"><a class="reference internal" href="#define-version-php">define.version.php</a></li>
 </ul>
 </li>
+<li class="toctree-l3"><a class="reference internal" href="#functions">Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#controllers">Controllers</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#posts-php">Posts.php</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#categories-php">Categories.php</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="#id1">Modules</a></li>
@@ -368,8 +374,78 @@ Fitur dasar seperti Posts, Pages, Media, dan lain sebagainya secara native telah
 <span class="nb">define</span><span class="p">(</span> <span class="s1">&#39;LRS_ENGINE_VERSION&#39;</span><span class="p">,</span> <span class="nv">$current_version</span> <span class="p">);</span>
 </pre></div>
 </td></tr></table></div>
+</div>
+</div>
+<div class="section" id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Link permanen untuk headline ini">¶</a></h3>
+<p>Berisi fungsi-fungsi pendukung yang banyak digunakan dalam Core, Modules, dan Skins.</p>
+<dl class="class">
+<dt>
+<code class="descname">fn.engine.php</code></dt>
+<dd><p>Daftar fungsi untuk keperluan engine.</p>
+<dl class="method">
+<dt id="check_required_engine_version">
+<code class="descname">check_required_engine_version</code><span class="sig-paren">(</span><em>$required_version</em>, <em>$exit</em>, <em>$messages</em><span class="sig-paren">)</span><a class="headerlink" href="#check_required_engine_version" title="Link permanen untuk definisi ini">¶</a></dt>
+<dd><p>Memeriksa kebutuhan versi engine untuk verifikasi module dan skin.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><ul class="first last simple">
+<li><strong>$required_version</strong> (<em>string</em>) &#8211; Versi engine yang ingin dicek.</li>
+<li><strong>$exit</strong> (<em>string</em>) &#8211; Jika tidak sesuai, apakah langsung exit atau tidak (default <code class="docutils literal"><span class="pre">true</span></code>).</li>
+<li><strong>$messages</strong> (<em>string</em>) &#8211; Pesan ketika exit (default <code class="docutils literal"><span class="pre">Insufficient</span> <span class="pre">Version</span> <span class="pre">of</span> <span class="pre">Engine</span></code>).</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="is_admin_page">
+<code class="descname">is_admin_page</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#is_admin_page" title="Link permanen untuk definisi ini">¶</a></dt>
+<dd><p>Cek apakah suatu halaman merupakan halaman admin atau tidak</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Kembali:</th><td class="field-body">yes | no</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="sync_default_params">
+<code class="descname">sync_default_params</code><span class="sig-paren">(</span><em>$default</em>, <em>$destination</em><span class="sig-paren">)</span><a class="headerlink" href="#sync_default_params" title="Link permanen untuk definisi ini">¶</a></dt>
+<dd><p>Melakukan singkronisasi terhadap 2 array</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><ul class="first last simple">
+<li><strong>$default</strong> (<em>string</em>) &#8211; Array default sebagai sumber.</li>
+<li><strong>$destination</strong> (<em>string</em>) &#8211; Array tujuan.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</dd></dl>
+
+</div>
+<div class="section" id="controllers">
+<h3>Controllers<a class="headerlink" href="#controllers" title="Link permanen untuk headline ini">¶</a></h3>
+<p>Kelas-kelas yang berisi fungsi inti dari setiap bagian layanan.</p>
+<div class="section" id="posts-php">
+<h4>Posts.php<a class="headerlink" href="#posts-php" title="Link permanen untuk headline ini">¶</a></h4>
+</div>
+<div class="section" id="categories-php">
+<h4>Categories.php<a class="headerlink" href="#categories-php" title="Link permanen untuk headline ini">¶</a></h4>
 <ul class="simple">
-<li>controller</li>
 <li>model</li>
 </ul>
 </div>

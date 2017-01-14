@@ -168,9 +168,44 @@ Berisi variabel path yang dapat diakses untuk keperluan akses publik.
     /** versi dari LRS Engine */
     define( 'LRS_ENGINE_VERSION', $current_version );
 
+Functions
+---------
+Berisi fungsi-fungsi pendukung yang banyak digunakan dalam Core, Modules, dan Skins.
+
+.. php:class:: fn.engine.php
+
+  Daftar fungsi untuk keperluan engine.
+
+  .. php:method:: check_required_engine_version( $required_version, $exit, $messages )
+
+      Memeriksa kebutuhan versi engine untuk verifikasi module dan skin.
+
+      :param string $required_version: Versi engine yang ingin dicek.
+      :param string $exit: Jika tidak sesuai, apakah langsung exit atau tidak (default ``true``).
+      :param string $messages: Pesan ketika exit (default ``Insufficient Version of Engine``).
+
+  .. php:method:: is_admin_page()
+
+      Cek apakah suatu halaman merupakan halaman admin atau tidak
+
+      :returns: yes | no
+
+  .. php:method:: sync_default_params( $default, $destination )
+
+      Melakukan singkronisasi terhadap 2 array
+
+      :param string $default: Array default sebagai sumber.
+      :param string $destination: Array tujuan.
+
 Controllers
 -----------
 Kelas-kelas yang berisi fungsi inti dari setiap bagian layanan.
+
+Posts.php
+.........
+
+Categories.php
+..............
 
 - model
 
