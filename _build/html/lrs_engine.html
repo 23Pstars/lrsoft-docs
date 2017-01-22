@@ -87,15 +87,7 @@
                 <ul class="current">
 <li class="toctree-l1 current"><a class="current reference internal" href="#">LRS Engine</a><ul>
 <li class="toctree-l2"><a class="reference internal" href="#core">Core</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="#configuration">Configuration</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#php-ini-override">PHP.ini override</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#url-path">URL Path</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#modules">Modules</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#general-info">General Info</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#database">Database</a></li>
-<li class="toctree-l4"><a class="reference internal" href="#installer">Installer</a></li>
-</ul>
-</li>
+<li class="toctree-l3"><a class="reference internal" href="#configuration">Configuration</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#defines">Defines</a><ul>
 <li class="toctree-l4"><a class="reference internal" href="#define-abs-path-php">define.abs.path.php</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#define-uri-path-php">define.uri.path.php</a></li>
@@ -110,7 +102,7 @@
 </li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="#id1">Modules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#modules">Modules</a></li>
 <li class="toctree-l2"><a class="reference internal" href="#skins">Skins</a></li>
 </ul>
 </li>
@@ -169,25 +161,7 @@
 Fitur dasar seperti Posts, Pages, Media, dan lain sebagainya secara native telah tersedia.</p>
 <div class="section" id="configuration">
 <h3>Configuration<a class="headerlink" href="#configuration" title="Link permanen untuk headline ini">¶</a></h3>
-<p>Script <code class="docutils literal"><span class="pre">config.php</span></code> pada <code class="docutils literal"><span class="pre">root</span></code> merupakan konfigurasi utama untuk menentukan beberapa variable yang digunakan dalam Engine dan modul-modul yang akan digunakan.</p>
-<div class="section" id="php-ini-override">
-<h4>PHP.ini override<a class="headerlink" href="#php-ini-override" title="Link permanen untuk headline ini">¶</a></h4>
-<div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nb">error_reporting</span><span class="p">(</span> <span class="k">E_ALL</span> <span class="o">^</span> <span class="nx">E_DEPRECATED</span> <span class="p">);</span>        <span class="c1">// untuk keperluan debugging</span>
-<span class="nb">date_default_timezone_set</span><span class="p">(</span><span class="s1">&#39;Asia/Makassar&#39;</span><span class="p">);</span>     <span class="c1">// set zona waktu</span>
-</pre></div>
-</td></tr></table></div>
-</div>
-<div class="section" id="url-path">
-<h4>URL Path<a class="headerlink" href="#url-path" title="Link permanen untuk headline ini">¶</a></h4>
-<p>local path (development) atau real domain (production)</p>
-<div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nb">define</span><span class="p">(</span> <span class="s1">&#39;LRS_URL_PATH&#39;</span><span class="p">,</span> <span class="s1">&#39;http://localhost/lrsoft/lrs-engine&#39;</span> <span class="p">);</span>     <span class="c1">// change me</span>
-</pre></div>
-</td></tr></table></div>
-</div>
-<div class="section" id="modules">
-<h4>Modules<a class="headerlink" href="#modules" title="Link permanen untuk headline ini">¶</a></h4>
-<p>Tidak harus menggunakan semua module, include hanya yang dibutuhkan saja.</p>
+<p>Buat script <code class="docutils literal"><span class="pre">config.php</span></code> pada <cite>root</cite> yang berisi konfigurasi utama untuk menentukan beberapa variable yang digunakan dalam Engine.</p>
 <div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre> 1
  2
  3
@@ -197,51 +171,92 @@ Fitur dasar seperti Posts, Pages, Media, dan lain sebagainya secara native telah
  7
  8
  9
-10</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nv">$LRS_APP_MODULES</span> <span class="o">=</span> <span class="k">array</span><span class="p">(</span>
-    <span class="k">array</span><span class="p">(</span>
-        <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;Mailer&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;path&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;mailer&#39;</span>
-    <span class="p">),</span>
-    <span class="k">array</span><span class="p">(</span>
-        <span class="s1">&#39;name&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;DB Exporter&#39;</span><span class="p">,</span>
-        <span class="s1">&#39;path&#39;</span> <span class="o">=&gt;</span> <span class="s1">&#39;db-exporter&#39;</span>
-    <span class="p">),</span>
-<span class="p">);</span>
-</pre></div>
-</td></tr></table></div>
-</div>
-<div class="section" id="general-info">
-<h4>General Info<a class="headerlink" href="#general-info" title="Link permanen untuk headline ini">¶</a></h4>
-<p>Informasi umum aplikas web</p>
-<div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nb">define</span><span class="p">(</span> <span class="s1">&#39;LRS_APP_NAME&#39;</span><span class="p">,</span> <span class="s1">&#39;LRsoft Engine&#39;</span> <span class="p">);</span>
+10
+11
+12
+13
+14
+15
+16
+17
+18
+19
+20
+21
+22
+23
+24
+25
+26
+27
+28
+29
+30
+31
+32
+33
+34
+35
+36
+37
+38
+39
+40
+41
+42
+43
+44
+45
+46
+47</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="sd">/** ========================</span>
+<span class="sd"> * konfigurasi path dan url</span>
+<span class="sd"> * ====================== */</span>
+
+<span class="sd">/** app url path */</span>
+<span class="nb">define</span><span class="p">(</span> <span class="s1">&#39;LRS_URL_PATH&#39;</span><span class="p">,</span> <span class="s1">&#39;http://localhost/lrsoft/lrs-engine&#39;</span> <span class="p">);</span>
+
+
+<span class="sd">/** =======================</span>
+<span class="sd"> * Informasi umum aplikasi</span>
+<span class="sd"> * ===================== */</span>
+
+<span class="sd">/** app name */</span>
+<span class="nb">define</span><span class="p">(</span> <span class="s1">&#39;LRS_APP_NAME&#39;</span><span class="p">,</span> <span class="s1">&#39;Local Development&#39;</span> <span class="p">);</span>
+
+<span class="sd">/** app author */</span>
 <span class="nb">define</span><span class="p">(</span> <span class="s1">&#39;LRS_APP_AUTHOR&#39;</span><span class="p">,</span> <span class="s1">&#39;LRsoft Corp.&#39;</span><span class="p">);</span>
+
+<span class="sd">/** app author url */</span>
 <span class="nb">define</span><span class="p">(</span> <span class="s1">&#39;LRS_APP_AUTHOR_URL&#39;</span><span class="p">,</span> <span class="s1">&#39;http://lrsoft.co.id&#39;</span><span class="p">);</span>
-</pre></div>
-</td></tr></table></div>
-</div>
-<div class="section" id="database">
-<h4>Database<a class="headerlink" href="#database" title="Link permanen untuk headline ini">¶</a></h4>
-<div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1
-2
-3
-4
-5</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nb">define</span><span class="p">(</span> <span class="s1">&#39;LRS_DB_HOST&#39;</span><span class="p">,</span> <span class="s1">&#39;localhost&#39;</span> <span class="p">);</span>
+
+
+<span class="sd">/** =====================</span>
+<span class="sd"> * konfigurasi database</span>
+<span class="sd"> * ==================== */</span>
+
+<span class="sd">/** host */</span>
+<span class="nb">define</span><span class="p">(</span> <span class="s1">&#39;LRS_DB_HOST&#39;</span><span class="p">,</span> <span class="s1">&#39;localhost&#39;</span> <span class="p">);</span>
+
+<span class="sd">/** username */</span>
 <span class="nb">define</span><span class="p">(</span> <span class="s1">&#39;LRS_DB_USERNAME&#39;</span><span class="p">,</span> <span class="s1">&#39;user&#39;</span> <span class="p">);</span>
+
+<span class="sd">/** password */</span>
 <span class="nb">define</span><span class="p">(</span> <span class="s1">&#39;LRS_DB_PASSWORD&#39;</span><span class="p">,</span> <span class="s1">&#39;pass&#39;</span> <span class="p">);</span>
-<span class="nb">define</span><span class="p">(</span> <span class="s1">&#39;LRS_DB_NAME&#39;</span><span class="p">,</span> <span class="s1">&#39;lrs_engine_v2.1.0&#39;</span> <span class="p">);</span>
+
+<span class="sd">/** database name */</span>
+<span class="nb">define</span><span class="p">(</span> <span class="s1">&#39;LRS_DB_NAME&#39;</span><span class="p">,</span> <span class="s1">&#39;dbname&#39;</span> <span class="p">);</span>
+
+<span class="sd">/** prefix tabel */</span>
 <span class="nb">define</span><span class="p">(</span> <span class="s1">&#39;LRS_DB_PREFIX&#39;</span><span class="p">,</span> <span class="s1">&#39;lrs_&#39;</span> <span class="p">);</span>
+
+<span class="sd">/** installer enable */</span>
+<span class="nb">define</span><span class="p">(</span> <span class="s1">&#39;LRS_INSTALLER_ENABLE&#39;</span><span class="p">,</span> <span class="k">true</span> <span class="p">);</span>
+
+
+<span class="sd">/** load fungsi inti lainnya */</span>
+<span class="k">require_once</span><span class="p">(</span> <span class="s1">&#39;function.php&#39;</span> <span class="p">);</span>
 </pre></div>
 </td></tr></table></div>
-</div>
-<div class="section" id="installer">
-<h4>Installer<a class="headerlink" href="#installer" title="Link permanen untuk headline ini">¶</a></h4>
-<p>Install semua struktur dan pre-installed database pada LRS Engine.</p>
-<div class="highlight-php"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="nb">define</span><span class="p">(</span> <span class="s1">&#39;LRS_INSTALLER_ENABLE&#39;</span><span class="p">,</span> <span class="k">true</span> <span class="p">);</span>
-</pre></div>
-</td></tr></table></div>
-</div>
 </div>
 <div class="section" id="defines">
 <h3>Defines<a class="headerlink" href="#defines" title="Link permanen untuk headline ini">¶</a></h3>
@@ -451,8 +466,8 @@ Fitur dasar seperti Posts, Pages, Media, dan lain sebagainya secara native telah
 </div>
 </div>
 </div>
-<div class="section" id="id1">
-<h2>Modules<a class="headerlink" href="#id1" title="Link permanen untuk headline ini">¶</a></h2>
+<div class="section" id="modules">
+<h2>Modules<a class="headerlink" href="#modules" title="Link permanen untuk headline ini">¶</a></h2>
 <ul class="simple">
 <li>db exporter</li>
 <li>mailer</li>

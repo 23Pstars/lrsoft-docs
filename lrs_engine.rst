@@ -13,75 +13,59 @@ Fitur dasar seperti Posts, Pages, Media, dan lain sebagainya secara native telah
 
 Configuration
 -------------
-Script ``config.php`` pada ``root`` merupakan konfigurasi utama untuk menentukan beberapa variable yang digunakan dalam Engine dan modul-modul yang akan digunakan.
-
-PHP.ini override
-................
+Buat script ``config.php`` pada `root` yang berisi konfigurasi utama untuk menentukan beberapa variable yang digunakan dalam Engine.
 
 .. code-block:: php
     :linenos:
 
-    error_reporting( E_ALL ^ E_DEPRECATED );        // untuk keperluan debugging
-    date_default_timezone_set('Asia/Makassar');     // set zona waktu
+    /** ========================
+     * konfigurasi path dan url
+     * ====================== */
 
-URL Path
-........
-local path (development) atau real domain (production)
+    /** app url path */
+    define( 'LRS_URL_PATH', 'http://localhost/lrsoft/lrs-engine' );
 
-.. code-block:: php
-    :linenos:
 
-    define( 'LRS_URL_PATH', 'http://localhost/lrsoft/lrs-engine' );     // change me
+    /** =======================
+     * Informasi umum aplikasi
+     * ===================== */
 
-Modules
-.......
-Tidak harus menggunakan semua module, include hanya yang dibutuhkan saja.
+    /** app name */
+    define( 'LRS_APP_NAME', 'Local Development' );
 
-.. code-block:: php
-    :linenos:
-
-    $LRS_APP_MODULES = array(
-        array(
-            'name' => 'Mailer',
-            'path' => 'mailer'
-        ),
-        array(
-            'name' => 'DB Exporter',
-            'path' => 'db-exporter'
-        ),
-    );
-
-General Info
-............
-Informasi umum aplikas web
-
-.. code-block:: php
-    :linenos:
-
-    define( 'LRS_APP_NAME', 'LRsoft Engine' );
+    /** app author */
     define( 'LRS_APP_AUTHOR', 'LRsoft Corp.');
+
+    /** app author url */
     define( 'LRS_APP_AUTHOR_URL', 'http://lrsoft.co.id');
 
-Database
-........
 
-.. code-block:: php
-    :linenos:
+    /** =====================
+     * konfigurasi database
+     * ==================== */
 
+    /** host */
     define( 'LRS_DB_HOST', 'localhost' );
+
+    /** username */
     define( 'LRS_DB_USERNAME', 'user' );
+
+    /** password */
     define( 'LRS_DB_PASSWORD', 'pass' );
-    define( 'LRS_DB_NAME', 'lrs_engine_v2.1.0' );
+
+    /** database name */
+    define( 'LRS_DB_NAME', 'dbname' );
+
+    /** prefix tabel */
     define( 'LRS_DB_PREFIX', 'lrs_' );
 
-Installer
-.........
-Install semua struktur dan pre-installed database pada LRS Engine.
-
-.. code-block:: php
-    :linenos:
-
+    /** installer enable */
     define( 'LRS_INSTALLER_ENABLE', true );
+
+
+    /** load fungsi inti lainnya */
+    require_once( 'function.php' );
+
 
 Defines
 -------
