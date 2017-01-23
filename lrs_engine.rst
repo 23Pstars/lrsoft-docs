@@ -178,8 +178,67 @@ Berisi fungsi-fungsi pendukung yang banyak digunakan dalam Core, Modules, dan Sk
 
       Melakukan singkronisasi terhadap 2 array
 
-      :param string $default: Array default sebagai sumber.
-      :param string $destination: Array tujuan.
+      :param array $default: Array default sebagai sumber.
+      :param array $destination: Array tujuan.
+
+  .. php:method:: in_array_r( $needle, $haystack )
+
+      Melakukan pencarian secara rekursif didalam array multidimensi
+
+      :param string $needle: Nilai yang akan dicari.
+      :param array $haystack: Array tujuan.
+
+  .. php:method:: lrs_exit( $messages = '', $type = 'info' )
+
+      Menampilkan format pesan error pada saat exit (menghentikan script denagn paksa)
+
+      :param string $messages: Nilai yang akan dicari (default string kosong, tapi script tetap ``exit()``).
+      :param string $type: Jenis pesan (info | alert).
+
+  .. php:method:: lrs_redirect( $target = LRS_URL_PATH )
+
+      Melakukan redirect (mengarahkan) ke sebuah halaman tertentu sesuai parameter
+
+      :param string $target: Halaman tujuan.
+
+  .. php:method:: get_menus( $array )
+
+      Mendapatkan built in menu, dari daftar `Pages`
+
+      - ``post_type``: jenis `post` ( post | page )
+      - ``post_parent``: ID untuk page induk
+      - ``post_status``: publish | draft
+      - ``orderby``: order berdasarkan suatu field
+      - ``order``: ASC | DESC
+      - ``number``: jumlah output maksimum item
+
+      :param array $array: Array yang berisi key.
+
+  .. php:method:: validate_url()
+
+      Memastikan konsistensi URL antara `requests` dan ``config.php`` dengan melakkukan redirect.
+
+  .. php:method:: lrs_paging_nav( $base_url, $total_data, $current_page, $data_per_page = 10, $range_data = 3 )
+
+      Membantu membuat navigasi halaman berdasarkan query database.
+
+      :param string $base_url: URL dasar pembentukan navigasi
+      :param int $total_data: Total keseluruhan data
+      :param int $current_page: Halaman saat ini
+      :param int $data_per_page: Jumlah data tiap page
+      :param int $range_data: Range data pada list navigasi, misal: ``1`` ``...`` ``23`` ``24`` ``25`` ``26`` ``27`` ``...`` ``100``
+
+  .. php:method:: is_SSL_URI()
+
+      Cek apakah URI yang ada pada ``config.php`` adalah `HTTPS`
+
+  .. php:method:: is_SSL_request()
+
+      Cek apakah URI yang di-submit merupakan `HTTPS`
+
+  .. php:method:: minify_HTML_output()
+
+      Melakukan kompresi out HTML dengan menghilangkan whitespace yang tidak diperlukan. Masukkan ``ob_start( 'minify_HTML_output' )`` pada bagian awal dan ``ob_end_flush()`` pada bagian akhir script.
 
 Controllers
 -----------

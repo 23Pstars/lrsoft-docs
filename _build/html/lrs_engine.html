@@ -440,13 +440,136 @@ Fitur dasar seperti Posts, Pages, Media, dan lain sebagainya secara native telah
 <col class="field-body" />
 <tbody valign="top">
 <tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><ul class="first last simple">
-<li><strong>$default</strong> (<em>string</em>) &#8211; Array default sebagai sumber.</li>
-<li><strong>$destination</strong> (<em>string</em>) &#8211; Array tujuan.</li>
+<li><strong>$default</strong> (<em>array</em>) &#8211; Array default sebagai sumber.</li>
+<li><strong>$destination</strong> (<em>array</em>) &#8211; Array tujuan.</li>
 </ul>
 </td>
 </tr>
 </tbody>
 </table>
+</dd></dl>
+
+<dl class="method">
+<dt id="in_array_r">
+<code class="descname">in_array_r</code><span class="sig-paren">(</span><em>$needle</em>, <em>$haystack</em><span class="sig-paren">)</span><a class="headerlink" href="#in_array_r" title="Link permanen untuk definisi ini">¶</a></dt>
+<dd><p>Melakukan pencarian secara rekursif didalam array multidimensi</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><ul class="first last simple">
+<li><strong>$needle</strong> (<em>string</em>) &#8211; Nilai yang akan dicari.</li>
+<li><strong>$haystack</strong> (<em>array</em>) &#8211; Array tujuan.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="lrs_exit">
+<code class="descname">lrs_exit</code><span class="sig-paren">(</span><em>$messages = ''</em>, <em>$type = 'info'</em><span class="sig-paren">)</span><a class="headerlink" href="#lrs_exit" title="Link permanen untuk definisi ini">¶</a></dt>
+<dd><p>Menampilkan format pesan error pada saat exit (menghentikan script denagn paksa)</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><ul class="first last simple">
+<li><strong>$messages</strong> (<em>string</em>) &#8211; Nilai yang akan dicari (default string kosong, tapi script tetap <code class="docutils literal"><span class="pre">exit()</span></code>).</li>
+<li><strong>$type</strong> (<em>string</em>) &#8211; Jenis pesan (info | alert).</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="lrs_redirect">
+<code class="descname">lrs_redirect</code><span class="sig-paren">(</span><em>$target = LRS_URL_PATH</em><span class="sig-paren">)</span><a class="headerlink" href="#lrs_redirect" title="Link permanen untuk definisi ini">¶</a></dt>
+<dd><p>Melakukan redirect (mengarahkan) ke sebuah halaman tertentu sesuai parameter</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><ul class="first last simple">
+<li><strong>$target</strong> (<em>string</em>) &#8211; Halaman tujuan.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="get_menus">
+<code class="descname">get_menus</code><span class="sig-paren">(</span><em>$array</em><span class="sig-paren">)</span><a class="headerlink" href="#get_menus" title="Link permanen untuk definisi ini">¶</a></dt>
+<dd><p>Mendapatkan built in menu, dari daftar <cite>Pages</cite></p>
+<ul class="simple">
+<li><code class="docutils literal"><span class="pre">post_type</span></code>: jenis <cite>post</cite> ( post | page )</li>
+<li><code class="docutils literal"><span class="pre">post_parent</span></code>: ID untuk page induk</li>
+<li><code class="docutils literal"><span class="pre">post_status</span></code>: publish | draft</li>
+<li><code class="docutils literal"><span class="pre">orderby</span></code>: order berdasarkan suatu field</li>
+<li><code class="docutils literal"><span class="pre">order</span></code>: ASC | DESC</li>
+<li><code class="docutils literal"><span class="pre">number</span></code>: jumlah output maksimum item</li>
+</ul>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><ul class="first last simple">
+<li><strong>$array</strong> (<em>array</em>) &#8211; Array yang berisi key.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="validate_url">
+<code class="descname">validate_url</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#validate_url" title="Link permanen untuk definisi ini">¶</a></dt>
+<dd><p>Memastikan konsistensi URL antara <cite>requests</cite> dan <code class="docutils literal"><span class="pre">config.php</span></code> dengan melakkukan redirect.</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="lrs_paging_nav">
+<code class="descname">lrs_paging_nav</code><span class="sig-paren">(</span><em>$base_url</em>, <em>$total_data</em>, <em>$current_page</em>, <em>$data_per_page = 10</em>, <em>$range_data = 3</em><span class="sig-paren">)</span><a class="headerlink" href="#lrs_paging_nav" title="Link permanen untuk definisi ini">¶</a></dt>
+<dd><p>Membantu membuat navigasi halaman berdasarkan query database.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><ul class="first last simple">
+<li><strong>$base_url</strong> (<em>string</em>) &#8211; URL dasar pembentukan navigasi</li>
+<li><strong>$total_data</strong> (<em>int</em>) &#8211; Total keseluruhan data</li>
+<li><strong>$current_page</strong> (<em>int</em>) &#8211; Halaman saat ini</li>
+<li><strong>$data_per_page</strong> (<em>int</em>) &#8211; Jumlah data tiap page</li>
+<li><strong>$range_data</strong> (<em>int</em>) &#8211; Range data pada list navigasi, misal: <code class="docutils literal"><span class="pre">1</span></code> <code class="docutils literal"><span class="pre">...</span></code> <code class="docutils literal"><span class="pre">23</span></code> <code class="docutils literal"><span class="pre">24</span></code> <code class="docutils literal"><span class="pre">25</span></code> <code class="docutils literal"><span class="pre">26</span></code> <code class="docutils literal"><span class="pre">27</span></code> <code class="docutils literal"><span class="pre">...</span></code> <code class="docutils literal"><span class="pre">100</span></code></li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="is_SSL_URI">
+<code class="descname">is_SSL_URI</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#is_SSL_URI" title="Link permanen untuk definisi ini">¶</a></dt>
+<dd><p>Cek apakah URI yang ada pada <code class="docutils literal"><span class="pre">config.php</span></code> adalah <cite>HTTPS</cite></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="is_SSL_request">
+<code class="descname">is_SSL_request</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#is_SSL_request" title="Link permanen untuk definisi ini">¶</a></dt>
+<dd><p>Cek apakah URI yang di-submit merupakan <cite>HTTPS</cite></p>
+</dd></dl>
+
+<dl class="method">
+<dt id="minify_HTML_output">
+<code class="descname">minify_HTML_output</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#minify_HTML_output" title="Link permanen untuk definisi ini">¶</a></dt>
+<dd><p>Melakukan kompresi out HTML dengan menghilangkan whitespace yang tidak diperlukan. Masukkan <code class="docutils literal"><span class="pre">ob_start(</span> <span class="pre">'minify_HTML_output'</span> <span class="pre">)</span></code> pada bagian awal dan <code class="docutils literal"><span class="pre">ob_end_flush()</span></code> pada bagian akhir script.</p>
 </dd></dl>
 
 </dd></dl>
