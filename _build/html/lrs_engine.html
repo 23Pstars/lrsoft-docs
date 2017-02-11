@@ -95,8 +95,12 @@
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="#functions">Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#models">Models</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#post">Post</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="#controllers">Controllers</a><ul>
-<li class="toctree-l4"><a class="reference internal" href="#posts-php">Posts.php</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#posts">Posts</a></li>
 <li class="toctree-l4"><a class="reference internal" href="#categories-php">Categories.php</a></li>
 </ul>
 </li>
@@ -575,11 +579,47 @@ Fitur dasar seperti Posts, Pages, Media, dan lain sebagainya secara native telah
 </dd></dl>
 
 </div>
+<div class="section" id="models">
+<h3>Models<a class="headerlink" href="#models" title="Link permanen untuk headline ini">¶</a></h3>
+<div class="section" id="post">
+<span id="model-post"></span><h4>Post<a class="headerlink" href="#post" title="Link permanen untuk headline ini">¶</a></h4>
+</div>
+</div>
 <div class="section" id="controllers">
 <h3>Controllers<a class="headerlink" href="#controllers" title="Link permanen untuk headline ini">¶</a></h3>
 <p>Kelas-kelas yang berisi fungsi inti dari setiap bagian layanan.</p>
-<div class="section" id="posts-php">
-<h4>Posts.php<a class="headerlink" href="#posts-php" title="Link permanen untuk headline ini">¶</a></h4>
+<div class="section" id="posts">
+<h4>Posts<a class="headerlink" href="#posts" title="Link permanen untuk headline ini">¶</a></h4>
+<p>Controller <cite>Posts</cite> berfungsi untuk mendapatkan data <cite>post</cite> dari database, kelas ini berada dalam direktori <code class="docutils literal"><span class="pre">/controller/</span></code> dan terdiri dari beberapa method.</p>
+<dl class="class">
+<dt>
+<code class="descname">Posts.php</code></dt>
+<dd><p>Daftar method untuk keperluan management post dari database.</p>
+<dl class="method">
+<dt id="get_instance">
+<code class="descname">get_instance</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#get_instance" title="Link permanen untuk definisi ini">¶</a></dt>
+<dd><p>Method static yang dapat dipanggil tanpa melakukan instansiasi, berguna untuk memanggil secara cepat kontroller <code class="docutils literal"><span class="pre">Posts</span></code>, caranya <code class="docutils literal"><span class="pre">Posts::get_instance()-&gt;{method}</span></code>.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Parameter:</th><td class="field-body"><ul class="first last simple">
+<li><strong>$object</strong> (<em>object</em>) &#8211; Objek kontroller <code class="docutils literal"><span class="pre">Posts</span></code>.</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="method">
+<dt id="get_post">
+<code class="descname">get_post</code><span class="sig-paren">(</span><em>$post_id</em>, <em>$by = 'post_id'</em>, <em>$meta_key = ''</em>, <em>$meta_value = ''</em><span class="sig-paren">)</span><a class="headerlink" href="#get_post" title="Link permanen untuk definisi ini">¶</a></dt>
+<dd><p>Mendapatkan 1 objek post dari database dengan mapping dari <a class="reference internal" href="#model-post">Model Post</a>.</p>
+</dd></dl>
+
+</dd></dl>
+
 </div>
 <div class="section" id="categories-php">
 <h4>Categories.php<a class="headerlink" href="#categories-php" title="Link permanen untuk headline ini">¶</a></h4>
