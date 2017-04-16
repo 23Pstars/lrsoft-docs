@@ -247,7 +247,34 @@ Models
 
 Post
 ....
+Model `Post` berfungsi sebagai objek untuk menyimpan data-data sebuah post, diantaranya:
 
+- ``$post_id`` ID unik dari sebuah post.
+- ``$post_status`` (active | inactive)
+- ``$post_type`` (Post | Page)
+- ``$post_title`` Judul utama dari sebuah post.
+- ``$post_name`` Judul post dalam format URL, biasanya digunakan untuk `permalink`.
+- ``$post_content`` Materi dari post.
+- ``$post_thumbnail_image`` Image thumb, biasanya berukuran kecil.
+- ``$post_featured_image`` Image cover, biasanya berukuran cukup besar.
+
+Model `Post` berada pada ``/model/Post.php``, dan berisi beberapa method pendukung berikut:
+
+.. php:class:: Post.php
+
+  Daftar method objek post untuk menyimpan data.
+
+  .. php:method:: get_{property_name}()
+
+      Mendapatkan nilai dari masing-masing `property name`.
+
+      :returns: `property value`
+
+  .. php:method:: set_{property_name}( $value )
+
+      Memberikan nilai ke masing-masing `property name`.
+
+      :param int|string $value: Nilai untuk masing-masing `property`.
 
 
 Controllers
@@ -275,7 +302,6 @@ Controller `Posts` berfungsi untuk mendapatkan data `post` dari database, kelas 
 Categories.php
 ..............
 
-- model
 
 Modules
 =======
