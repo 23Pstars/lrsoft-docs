@@ -264,6 +264,12 @@ Model `Post` berada pada ``/model/Post.php``, dan berisi beberapa method penduku
 
   Daftar method objek post untuk menyimpan data.
 
+  .. php:method:: init( $post )
+
+      Init `value` sekaligus dalam waktu bersamaan.
+
+      :returns: Object `post`.
+
   .. php:method:: get_{property_name}()
 
       Mendapatkan nilai dari masing-masing `property name`.
@@ -275,6 +281,29 @@ Model `Post` berada pada ``/model/Post.php``, dan berisi beberapa method penduku
       Memberikan nilai ke masing-masing `property name`.
 
       :param int|string $value: Nilai untuk masing-masing `property`.
+
+  .. php:method:: set_{property_name}( $value )
+
+      Memberikan nilai ke masing-masing `property name`.
+
+      :param int|string $value: Nilai untuk masing-masing `property`.
+
+  .. php:method:: get_permalink( $structured = false )
+
+      Mendapatkan `URL` ke masing-masing post, format ``$structured`` adalah ``/category/post-name``, dan default ``/post-name``.
+
+      :returns: String dalam format `URL`.
+
+  .. php:method:: is_empty( $field = 'post_id' )
+
+      Memeriksa apakah objek `Post` NULL (kosong), beberapa field yang bisa dicek:
+
+      - ``post_name``
+      - ``post_title``
+      - ``post_content``
+      - ``post_date``
+
+      :returns: Boolean (true|false).
 
 
 Controllers
@@ -293,14 +322,30 @@ Controller `Posts` berfungsi untuk mendapatkan data `post` dari database, kelas 
 
       Method static yang dapat dipanggil tanpa melakukan instansiasi, berguna untuk memanggil secara cepat kontroller ``Posts``, caranya ``Posts::get_instance()->{method}``.
 
-      :param object $object: Objek kontroller ``Posts``.
+      :returns: Objek kontroller ``Posts``.
 
   .. php:method:: get_post( $post_id, $by = 'post_id', $meta_key = '', $meta_value = '' )
 
       Mendapatkan 1 objek post dari database dengan mapping dari `Model Post`_.
 
-Categories.php
-..............
+      :returns: Objek `Model Post`_.
+
+  .. php:method:: get_posts( $params = array() )
+
+      Mendapatkan beberapa objek post `Model Post`_ sekaligus dengan beberapa parameter berikut:
+
+      - ``post_title`` judul dari post, `default` `empty`
+      - ``post_content`` isi dari post, `default` `empty`
+      - ``post_type`` jenis post, `default` `Post` (`Post` | `Page` | -1)
+      - ``post_parent`` ID dari post induk, `default` -1
+      - ``post_status`` status post, `default` `Publish` (`Publish` | `Draft` | -1)
+      - ``exclude`` array dari ID `Model Post`_ yang tidak ingin dimunculkan dalam hasil, `default` ``array()``
+      - ``category_id`` ID dari kategory, `default` -1
+      - ``category_exclude`` ID dari kategori yang tidak ingin dimunculkan dalam hasil, `default` ``array()``
+      - ``post_month`` bulan pembuatan post, `default` -1
+      - -tbd-
+
+      :returns: Array dari objek `Model Post`_.
 
 
 Modules
