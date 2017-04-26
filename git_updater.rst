@@ -1,6 +1,6 @@
-==================
-GIT Source Updater
-==================
+===========
+GIT Updater
+===========
 
 GIT Source Updater merupakan script yang dapat membantu dalam melakukan update sebuah repo dalam deployment secara otomatis.
 Update dilakukan dengan membaca setiap commit yang di-push, selanjutnya melakukan fetch raw source dari GIT server.
@@ -45,9 +45,9 @@ Ekekusi!
 
 Screenshot
 ==========
-.. image:: _static/img/git-source-updater/screenshot1.png
-.. image:: _static/img/git-source-updater/screenshot2.png
-.. image:: _static/img/git-source-updater/screenshot3.png
+.. image:: _static/img/git-updater/screenshot1.png
+.. image:: _static/img/git-updater/screenshot2.png
+.. image:: _static/img/git-updater/screenshot3.png
 
 References
 ==========
