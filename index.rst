@@ -10,5 +10,5 @@ Halaman ini berisi dokumentasi dari project-project yang dikemabangkan oleh tim 
    :maxdepth: 3
 
    lrs_engine
-   lrs_api
+   api_service
    git_updater
