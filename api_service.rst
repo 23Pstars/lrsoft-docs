@@ -49,7 +49,7 @@ API yang dapat menampilkan nilai konversi dari beberapa mata uang yang umum digu
 Example
 -------
 
-``http://currency-rate.dev/v1/exchange?amount=250000&formatted=1&round=1&base=IDR&target=USD``
+``http://api.lrsoft.id/currency-rate/v1/exchange?amount=250000&formatted=1&round=1&base=IDR&target=USD``
 
 .. code-block:: javascript
 
