@@ -16,11 +16,11 @@ Currency Rate
 
 API yang dapat menampilkan nilai konversi dari beberapa mata uang yang umum digunakan di banyak negara.
 
-.. php:class:: http://api.lrsoft.id/currency-rate/v1
+.. php:class:: http://api.lrsoft.id/currency-rate
 
   Versi 1
 
-  .. php:method:: /gets( $array )
+  .. php:method:: /v1/gets( $array )
 
       Menampilkan daftar nilai konversi mata uang.
 
@@ -34,7 +34,7 @@ API yang dapat menampilkan nilai konversi dari beberapa mata uang yang umum digu
 
       :returns: Array hasil
 
-  .. php:method:: /exchange( $array )
+  .. php:method:: /v1/exchange( $array )
 
       Melakukan konversi mata uang.
 
@@ -49,7 +49,40 @@ API yang dapat menampilkan nilai konversi dari beberapa mata uang yang umum digu
 Example
 -------
 
-``http://api.lrsoft.id/currency-rate/v1/exchange?amount=250000&formatted=1&round=1&base=IDR&target=USD``
+**GET** ``/v1/gets?base=IDR``
+
+.. code-block:: javascript
+
+      {
+        queries: {
+          base: "IDR",
+          number: 2
+        },
+        results: [
+          {
+            sync_date: "2017-05-05 22:30:00",
+            base: "IDR",
+            name: "British Pound Sterling",
+            code: "GBP",
+            value: "0.000058130881155744",
+            _value_reversed: 17202.5605,
+            _value_reversed_round: 17203,
+            _value_reversed_formatted: "IDR 17,203"
+          },
+          {
+            sync_date: "2017-05-05 22:29:00",
+            base: "IDR",
+            name: "Swiss Franc",
+            code: "CHF",
+            value: "0.000074000619414785",
+            _value_reversed: 13513.4004,
+            _value_reversed_round: 13513,
+            _value_reversed_formatted: "IDR 13,513"
+          },
+        ]
+      }
+
+**GET** ``/v1/exchange?amount=250000&formatted=1&round=1&base=IDR&target=USD``
 
 .. code-block:: javascript
 
