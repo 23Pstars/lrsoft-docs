@@ -24,7 +24,7 @@ API yang dapat menampilkan history harga kapal cepat (fast boat) yang melalui Ba
       - ``boat`` nama boat, `default` `empty`
       - ``order_by`` mengurutkan daftar, `default` `fetch_date` (`fetch_date` | `depart` | `arrive` | ...)
       - ``order`` mode pengurutan, `default` `DESC` (`DESC` | `ASC`)
-      - ``order`` jumlah data, `default` `10`
+      - ``number`` jumlah data, `default` `10`
       - ``offset`` offset nilai dalam query, `default` `0`
 
       :returns: Array hasil
