@@ -9,7 +9,64 @@ Boat Price
 
 API yang dapat menampilkan history harga kapal cepat (fast boat) yang melalui Bali, Lombok, dan pulau-pulau Gili.
 
-``http://api.lrsoft.id/boat-price/v1/``
+.. php:class:: http://api.lrsoft.id/boat-price
+
+  Versi 1
+
+  .. php:method:: /v1/gets( $array )
+
+      Menampilkan daftar nilai konversi mata uang.
+
+      - ``fetch_date`` tanggal rate, `default` tanggal saat ini
+      - ``depart`` keberangkatan, `default` `empty` (`Lombok` | `Bali` | ...)
+      - ``arrive`` tujuan, `default` `empty` (`Lombok` | `Bali` | ...)
+      - ``agent`` nama agent, `default` `empty`
+      - ``boat`` nama boat, `default` `empty`
+      - ``order_by`` mengurutkan daftar, `default` `fetch_date` (`fetch_date` | `depart` | `arrive` | ...)
+      - ``order`` mode pengurutan, `default` `DESC` (`DESC` | `ASC`)
+      - ``order`` jumlah data, `default` `10`
+      - ``offset`` offset nilai dalam query, `default` `0`
+
+      :returns: Array hasil
+
+Example
+-------
+
+**GET** ``/v1/gets?depart=Bali&arrive=Lombok&number=2``
+
+.. code-block:: javascript
+
+      {
+        queries: {
+          depart: "Bali",
+          arrive: "Lombok",
+          number: 2
+        },
+        results: [
+          {
+            fetch_date: "2017-05-06 14:23:32",
+            price: "340000",
+            depart: "Bali",
+            depart_time: "09:30:00",
+            arrive: "Lombok",
+            arrive_time: "11:00:00",
+            agent: "Lombok Fast Boats",
+            boat: "Mahi Mahi Dewata",
+            _agent_site: "https://www.lombokfastboats.com"
+          },
+          {
+            fetch_date: "2017-05-06 14:23:32",
+            price: "350000",
+            depart: "Bali",
+            depart_time: "13:00:00",
+            arrive: "Lombok",
+            arrive_time: "15:00:00",
+            agent: "Lombok Fast Boats",
+            boat: "Wahana Gili Ocean",
+            _agent_site: "https://www.lombokfastboats.com"
+          }
+        ]
+      }
 
 Currency Rate
 =============
@@ -78,7 +135,7 @@ Example
             _value_reversed: 13513.4004,
             _value_reversed_round: 13513,
             _value_reversed_formatted: "IDR 13,513"
-          },
+          }
         ]
       }
 
