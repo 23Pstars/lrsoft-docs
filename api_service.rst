@@ -9,6 +9,18 @@ Boat Price
 
 API yang dapat menampilkan history harga kapal cepat (fast boat) yang melalui Bali, Lombok, dan pulau-pulau Gili.
 
+Resources
+---------
+- `LombokFastBoats.com`_
+- `BaliFastBoats.com`_
+- GiliTickets.com
+- GiliBookings.com
+- GiliTransfers.com
+- GiliBestDeal.com
+
+.. _LombokFastBoats.com: https://www.lombokfastboats.com
+.. _BaliFastBoats.com: http://www.balifastboats.com
+
 .. php:class:: http://api.lrsoft.id/boat-price
 
   Versi 1
