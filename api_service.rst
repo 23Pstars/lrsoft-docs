@@ -94,7 +94,8 @@ API yang dapat menampilkan nilai konversi dari beberapa mata uang yang umum digu
       Menampilkan daftar nilai konversi mata uang.
 
       - ``sync_date`` tanggal rate, `default` tanggal saat ini
-      - ``base`` dasar nilai konversi, `default` `IDR`
+      - ``base`` dasar nilai konversi, `default` `empty`
+      - ``target`` tujuan nilai konversi, `default` `empty`
       - ``name`` mencari nama mata uang negara, `default` `empty`
       - ``order_by`` mengurutkan daftar nilai konversi, `default` `sync_date` (`sync_date` | `base` | `name` | `code` | `value`)
       - ``order`` mode pengurutan, `default` `DESC` (`DESC` | `ASC`)
