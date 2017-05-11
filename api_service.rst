@@ -166,3 +166,56 @@ Example
         },
         results: "USD 19"
       }
+
+
+IBM Watson
+==========
+
+Beberapa API kognitif dari service IBM Watson.
+
+.. php:class:: http://api.lrsoft.id/ibm-watson
+
+  Versi 1
+
+  .. php:method:: /v1/tone-analyzer( $array )
+
+      Menampilkan analisa tone dari konten yang terdapat dalam sebuah website.
+      Saat ini baru mendukung site dengan engine ``WordPress`` dan ``Blogger``.
+
+      - ``site`` alamat website yang akan dianalisa (`fully qualified URL`, contoh: ``http://nypost.com``)
+
+      :returns: JSON
+
+Example
+-------
+
+**GET** ``/v1/tone-analyzer?site=http://nypost.com``
+
+.. code-block:: javascript
+
+      {
+        site: "http://nypost.com",
+        limit: 5,
+        contents: "Your source for breaking news, news about New York, sports, business, entertainment, opinion, real estate, culture, fashion, and more.Council Speaker Melissa Mark-Viverito publicly called on embattled Correction Commissioner Joe Ponte to resign Wednesday, days after privately sharing that view with Mayor de Blasio. &#8220;I do believe Ponte should step down,&#8221; she told reporters at a City Hall press conference. &#8220;I think he should consider it seriously at this point.&#8221; Mark-Viverito said she made...They’re behind bars, but that doesn’t mean it’s easy to track inmates in the city’s jails. So the Department of Correction is spending $4.5 million to equip them with electronic wristbands that can be monitored in real time. The tracking system was piloted in the fall at one jail and one court facility, and will...Rep. Joseph Crowley, who serves as Queens Democratic leader, is ­using campaign funds to rent office space in a family-owned property outside his district, rec­ords show. Crowley has paid at least $69,700 since 2007 to ­Killean Enterprises LLC, which is controlled by his brother, lobbyist John “Sean” Crowley. As chairman of the House Democratic Caucus,...Wall Street investors ghosted Snap after it reported a larger-than-expected $2.2 billion loss in the first quarter — while ringing up revenue that couldn’t even match the business it drummed up in the fourth quarter. Yes, competing against social media giants like Facebook is proving tough — at least early in Snapchat’s life. It was...",
+        results: {
+          document_tone: {
+            tone_categories: [
+                {
+                  tones: [
+                    {
+                      score: 0.205602,
+                      tone_id: "anger",
+                      tone_name: "Anger"
+                    },
+                    {
+                      score: 0.523796,
+                      tone_id: "disgust",
+                      tone_name: "Disgust"
+                    },
+                    {
+                      score: 0.120882,
+                      tone_id: "fear",
+                      tone_name: "Fear"
+                    },
+
+      ...
