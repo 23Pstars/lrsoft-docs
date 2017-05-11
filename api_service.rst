@@ -183,13 +183,14 @@ Beberapa API kognitif dari service IBM Watson.
       Saat ini baru mendukung site dengan engine ``WordPress`` dan ``Blogger``.
 
       - ``site`` alamat website yang akan dianalisa (`fully qualified URL`, contoh: ``http://nypost.com``)
+      - ``limit`` jumlah post yang akan dianalisa, `default` ``5``
 
       :returns: JSON
 
 Example
 -------
 
-**GET** ``/v1/tone-analyzer?site=http://nypost.com``
+**GET** ``/v1/tone-analyzer?site=http://nypost.com&limit=5``
 
 .. code-block:: javascript
 
