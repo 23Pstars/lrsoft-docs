@@ -220,3 +220,36 @@ Example
                     },
 
       ...
+
+
+Instagram
+==========
+
+Fetching photo dari Instagram.
+
+.. php:class:: http://api.lrsoft.id/instagram
+
+  Versi 1
+
+  .. php:method:: /v1/tag( $array )
+
+      Fetch daftar photo berdasarkan tag.
+
+      - ``tag`` kata kunci tag
+
+      :returns: JSON
+
+  .. php:method:: /v1/user( $array )
+
+      Fetch profil user beserta foto terkini yang dipost.
+
+      - ``user`` username dari akun
+
+      :returns: JSON
+
+Example
+-------
+
+**GET** ``/v1/tag?tag=senggigi``
+
+**GET** ``/v1/user?tag=23pstars``
