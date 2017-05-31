@@ -85,6 +85,13 @@ Currency Rate
 
 API yang dapat menampilkan nilai konversi dari beberapa mata uang yang umum digunakan di banyak negara.
 
+Resources
+---------
+
+Kami menggunakan layanan `Yahoo! Finance`_ untuk mendapatkan nilai konversi mata uang terkini, update setiap hari.
+
+.. _`Yahoo! Finance`: https://finance.yahoo.com/currencies
+
 .. php:class:: http://api.lrsoft.id/currency-rate
 
   Versi 1
@@ -239,7 +246,7 @@ Fetching photo dari Instagram.
 
       :returns: JSON
 
-  .. php:method:: /v1/user( $array )
+  .. php:method:: /v1/user( $user )
 
       Fetch profil user beserta foto terkini yang dipost.
 
