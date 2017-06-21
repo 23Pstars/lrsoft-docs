@@ -230,7 +230,7 @@ Example
 
 
 Instagram
-==========
+=========
 
 Fetching photo dari Instagram.
 
@@ -260,3 +260,38 @@ Example
 **GET** ``/v1/tag?tag=senggigi``
 
 **GET** ``/v1/user?tag=23pstars``
+
+
+Mail
+====
+
+Kirim email menggunakan relay-smtp.
+
+.. php:class:: http://api.lrsoft.id/mail
+
+  Versi 1
+
+  .. php:method:: /v1/send?{$params}
+
+      Kirim email.
+
+      - ``to_email`` alamat email tujuan
+      - ``to_name`` nama email tujuan
+      - ``from_email`` alamat email pengirim
+      - ``from_name`` nama email pengirim
+      - ``content`` body email (HTML versi encoded)
+      - ``cc_email`` alamat email CC
+      - ``cc_name`` nama email CC
+      - ``bcc_email`` alamat email BCC
+      - ``bcc_name`` nama email BCC
+      - ``reply_to_email`` alamat email untuk tujuan reply
+      - ``reply_to_name`` nama email untuk tujuan reply
+
+      :returns: JSON
+
+Example
+-------
+
+**GET** ``/v1/send?to_email=zaf@lrsoft.id&to_name=Ahmad%20Zafrullah``
+``&from_email=info@lrsoft.org&from_name=LRsoft%20Senggigi``
+``&content=Hello%20World&subject=Test%20Mail``
