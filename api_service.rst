@@ -19,9 +19,9 @@ Resources
 - GiliBestDeal.com
 
 .. _LombokFastBoats.com: https://www.lombokfastboats.com
-.. _BaliFastBoats.com: http://www.balifastboats.com
+.. _BaliFastBoats.com: https://www.balifastboats.com
 
-.. php:class:: http://api.lrsoft.id/boat-price
+.. php:class:: https://api.lrsoft.id/boat-price
 
   Versi 1
 
@@ -64,7 +64,9 @@ Example
             arrive_time: "11:00:00",
             agent: "Lombok Fast Boats",
             boat: "Mahi Mahi Dewata",
-            _agent_site: "https://www.lombokfastboats.com"
+            _agent_site: "https://www.lombokfastboats.com",
+            _boat_logo: "https://api.lrsoft.id/boat-price/assets/images/logos/mahimahi.png",
+            _boat_photo: "https://api.lrsoft.id/boat-price/assets/images/boats/mahimahi.jpeg"
           },
           {
             fetch_date: "2017-05-06 14:23:32",
@@ -75,7 +77,9 @@ Example
             arrive_time: "15:00:00",
             agent: "Lombok Fast Boats",
             boat: "Wahana Gili Ocean",
-            _agent_site: "https://www.lombokfastboats.com"
+            _agent_site: "https://www.lombokfastboats.com",
+            _boat_logo: "https://api.lrsoft.id/boat-price/assets/images/logos/wahana.png",
+            _boat_photo: "https://api.lrsoft.id/boat-price/assets/images/boats/wahana.jpeg"
           }
         ]
       }
@@ -92,7 +96,7 @@ Kami menggunakan layanan `Yahoo! Finance`_ untuk mendapatkan nilai konversi mata
 
 .. _`Yahoo! Finance`: https://finance.yahoo.com/currencies
 
-.. php:class:: http://api.lrsoft.id/currency-rate
+.. php:class:: https://api.lrsoft.id/currency-rate
 
   Versi 1
 
@@ -180,7 +184,7 @@ IBM Watson
 
 Beberapa API kognitif dari service IBM Watson.
 
-.. php:class:: http://api.lrsoft.id/ibm-watson
+.. php:class:: https://api.lrsoft.id/ibm-watson
 
   Versi 1
 
@@ -234,7 +238,7 @@ Instagram
 
 Fetching photo dari Instagram.
 
-.. php:class:: http://api.lrsoft.id/instagram
+.. php:class:: https://api.lrsoft.id/instagram
 
   Versi 1
 
@@ -267,7 +271,7 @@ Mail
 
 Kirim email menggunakan relay-smtp.
 
-.. php:class:: http://api.lrsoft.id/mail
+.. php:class:: https://api.lrsoft.id/mail
 
   Versi 1
 
