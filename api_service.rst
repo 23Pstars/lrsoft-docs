@@ -284,6 +284,7 @@ Kirim email menggunakan relay-smtp.
       - ``from_email`` alamat email pengirim
       - ``from_name`` nama email pengirim
       - ``content`` body email (HTML versi encoded)
+      - ``subject`` subjek email
       - ``cc_email`` alamat email CC
       - ``cc_name`` nama email CC
       - ``bcc_email`` alamat email BCC
