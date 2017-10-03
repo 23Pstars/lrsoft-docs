@@ -300,3 +300,102 @@ Example
 **GET** ``/v1/send?to_email=zaf@lrsoft.id&to_name=Ahmad%20Zafrullah``
 ``&from_email=info@lrsoft.org&from_name=LRsoft%20Senggigi``
 ``&content=Hello%20World&subject=Test%20Mail``
+
+Shipping
+========
+
+Biaya pengiriman paket dari ekspedisi JNE, TIKI, dan POS Indonesia.
+
+.. php:class:: https://api.lrsoft.id/shipping
+
+  Versi 1
+
+  .. php:method:: /v1/cities?{$params}
+      
+      Tampilkan daftar kota-kota di Indonesia.
+
+      - ``city_name`` cari kota berdasarkan nama kota (*optional*)
+      - ``province`` cari kota berdasarkan nama provinsi (*optional*)
+      - ``order_by`` urutkan berdasarkan field (``city_id`` | ``city_name`` | ``province``) (*optional*)
+      - ``order`` model pengurutan (``ASC`` | ``DESC``) (*optional*)
+      - ``number`` maksimal data yang ditampilkan, ``-1`` untuk menampilkan semua (*optional*)
+
+      :returns: JSON
+
+  .. php:method:: /v1/cost?{$params}
+
+      Cek biaya kirim.
+
+      - ``origin`` ID kota asal dari ``cities`` (*mandatory*)
+      - ``destination`` ID kota tujuan dari ``cities`` (*mandatory*)
+      - ``courier_code`` kode kurir (``jne`` | ``tiki`` | ``pos``), *default* ``jne`` (*mandatory*)
+      - ``weight`` simulasi berat dari paket (*optional*)
+
+      :returns: JSON
+
+Example
+-------
+
+**GET** ``/v1/cities?city_name=lombok``
+
+.. code-block:: javascript
+
+      {
+      status: true,
+        cities: [
+          {
+            city_id: "241",
+            province_id: "22",
+            province: "Nusa Tenggara Barat (NTB)",
+            type: "Kabupaten",
+            city_name: "Lombok Utara",
+            postal_code: "83711",
+            status: "0"
+          },
+          {
+            city_id: "240",
+            province_id: "22",
+            province: "Nusa Tenggara Barat (NTB)",
+            type: "Kabupaten",
+            city_name: "Lombok Timur",
+            postal_code: "83612",
+            status: "0"
+          },
+          {
+            city_id: "239",
+            province_id: "22",
+            province: "Nusa Tenggara Barat (NTB)",
+            type: "Kabupaten",
+            city_name: "Lombok Tengah",
+            postal_code: "83511",
+            status: "0"
+          },
+          {
+            city_id: "238",
+            province_id: "22",
+            province: "Nusa Tenggara Barat (NTB)",
+            type: "Kabupaten",
+            city_name: "Lombok Barat",
+            postal_code: "83311",
+            status: "0"
+          }
+        ]
+      }
+
+**GET** ``/v1/cost?origin=501&destination=501&courier_code=jne&weight=10``
+
+.. code-block:: javascript
+
+      {
+        status: true,
+          cost: {
+            origin: "501",
+            destination: "501",
+            courier_code: "jne",
+            courier_service: "CTC",
+            cost: "5000",
+            delivery: "1-2",
+            note: "",
+            _cost_total: "50000"
+          }
+        }
