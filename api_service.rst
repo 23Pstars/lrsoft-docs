@@ -329,7 +329,7 @@ Biaya pengiriman paket dari ekspedisi JNE, TIKI, dan POS Indonesia.
       - ``origin`` ID kota asal dari ``cities`` (*mandatory*)
       - ``destination`` ID kota tujuan dari ``cities`` (*mandatory*)
       - ``courier_code`` kode kurir (``jne`` | ``tiki`` | ``pos``), *default* ``jne`` (*mandatory*)
-      - ``weight`` simulasi berat dari paket (*optional*)
+      - ``weight`` simulasi berat dari paket (kg) (*optional*)
 
       :returns: JSON
 
