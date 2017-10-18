@@ -333,6 +333,24 @@ Biaya pengiriman paket dari ekspedisi JNE, TIKI, dan POS Indonesia.
 
       :returns: JSON
 
+  .. php:method:: /v1/costs?{$params}
+
+      Cek daftar biaya kirim.
+
+      - ``origin`` ID kota asal dari ``cities`` (*optional*)
+      - ``origin_name`` nama kota asal dari ``cities`` (*optional*)
+      - ``origin_postal`` kode postal kota asal dari ``cities`` (*optional*)
+      - ``destination`` ID kota tujuan dari ``cities`` (*optional*)
+      - ``destination_name`` nama kota tujuan dari ``cities`` (*optional*)
+      - ``destination_postal`` kode postal kota tujuan dari ``cities`` (*optional*)
+      - ``courier_code`` kode kurir (``jne`` | ``tiki`` | ``pos``) (*optional*)
+      - ``weight`` simulasi berat dari paket (kg) (*optional*)
+      - ``order_by`` urutkan berdasarkan field (``origin`` | ``destination`` | ``courier_code`` | ``courier_service``) (*optional*)
+      - ``order`` model pengurutan (``ASC`` | ``DESC``) (*optional*)
+      - ``number`` maksimal data yang ditampilkan, ``-1`` untuk menampilkan semua (*optional*)
+
+      :returns: JSON
+
 Example
 -------
 
@@ -341,7 +359,7 @@ Example
 .. code-block:: javascript
 
       {
-      status: true,
+        status: true,
         cities: [
           {
             city_id: "241",
@@ -388,14 +406,73 @@ Example
 
       {
         status: true,
-          cost: {
-            origin: "501",
-            destination: "501",
-            courier_code: "jne",
-            courier_service: "CTC",
-            cost: "5000",
-            delivery: "1-2",
-            note: "",
-            _cost_total: "50000"
-          }
+        cost: {
+          origin: "501",
+          destination: "501",
+          courier_code: "jne",
+          courier_service: "CTC",
+          cost: "5000",
+          delivery: "1-2",
+          note: "",
+          _cost_total: "50000"
         }
+      }
+
+**GET** ``/v1/costs?origin_name=Yogyakarta&destination_name=Mataram&courier_code=jne``
+
+.. code-block:: javascript
+
+      {
+        queries: {
+          origin_name: "Yogyakarta",
+          destination_name: "Mataram",
+          courier_code: "jne"
+        },
+        results: [
+          {
+            origin: "501",
+            destination: "276",
+            courier_code: "jne",
+            courier_service: "OKE",
+            cost: "30000",
+            delivery: "4-5",
+            note: "",
+            _cost_total: "30000",
+            _cost_total_formatted: "30,000",
+            _origin_name: "Yogyakarta",
+            _destination_name: "Mataram",
+            _origin_postal: "55222",
+            _destination_postal: "83131"
+          },
+          {
+            origin: "501",
+            destination: "276",
+            courier_code: "jne",
+            courier_service: "REG",
+            cost: "35000",
+            delivery: "2-3",
+            note: "",
+            _cost_total: "35000",
+            _cost_total_formatted: "35,000",
+            _origin_name: "Yogyakarta",
+            _destination_name: "Mataram",
+            _origin_postal: "55222",
+            _destination_postal: "83131"
+          },
+          {
+            origin: "501",
+            destination: "276",
+            courier_code: "jne",
+            courier_service: "YES",
+            cost: "58000",
+            delivery: "1-1",
+            note: "",
+            _cost_total: "58000",
+            _cost_total_formatted: "58,000",
+            _origin_name: "Yogyakarta",
+            _destination_name: "Mataram",
+            _origin_postal: "55222",
+            _destination_postal: "83131"
+          }
+        ]
+      }
