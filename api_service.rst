@@ -4,6 +4,64 @@ API Services
 
 Tim research and development LRsoft telah mengembangkan beberapa API untuk keperluan project. Beberapa API sengaja dibuka ke publik sebagai bahan inspirasi, meskipun beberapa lagi diantaranya tidak benar-benar terbuka (licensed).
 
+LRS Engine
+==========
+
+RESTful API untuk semua web yang menggunakan LRS Engine.
+
+.. php:class:: http://client-comain.com/api
+
+  Public fetch, request yang tidak memerlukan autentikasi.
+
+  .. php:method:: /posts?{$params}
+      
+      Daftar semua pos.
+
+      - ``post_title`` cari berdasarkan judul (*optional*)
+      - ``category_id`` cari berdasarkan ID kategori (*optional*)
+      - ``order_by`` (*optional*)
+      - ``order`` model pengurutan (``ASC`` | ``DESC``) (*optional*)
+      - ``number`` maksimal data yang ditampilkan, ``-1`` untuk menampilkan semua (*optional*)
+
+      :returns: JSON
+
+  .. php:method:: /categories?{$params}
+
+      Daftar semua kategori.
+
+      - ``category_title`` cari berdasarkan judul (*optional*)
+      - ``order_by`` (*optional*)
+      - ``order`` model pengurutan (``ASC`` | ``DESC``) (*optional*)
+      - ``number`` maksimal data yang ditampilkan, ``-1`` untuk menampilkan semua (*optional*)
+
+      :returns: JSON
+  
+  .. php:method:: /users?{$params}
+
+      Daftar semua pengguna.
+
+      - ``order_by`` (*optional*)
+      - ``order`` model pengurutan (``ASC`` | ``DESC``) (*optional*)
+      - ``number`` maksimal data yang ditampilkan, ``-1`` untuk menampilkan semua (*optional*)
+
+      :returns: JSON
+
+  .. php:method:: /medias?{$params}
+
+      Daftar semua media.
+
+      - ``order_by`` (*optional*)
+      - ``order`` model pengurutan (``ASC`` | ``DESC``) (*optional*)
+      - ``number`` maksimal data yang ditampilkan, ``-1`` untuk menampilkan semua (*optional*)
+
+      :returns: JSON
+
+  .. php:method:: /options?{$params}
+
+      Daftar semua variabel option, ``params`` menggunakan concat ``key`` option yang ingin diambil.
+
+      :returns: JSON
+
 Boat Price
 ==========
 
