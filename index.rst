@@ -11,5 +11,4 @@ Halaman ini berisi dokumentasi dari project-project yang dikemabangkan oleh tim 
 
    web_assets
    lrs_engine
-   api_service
    git_updater
